@@ -12,6 +12,14 @@
 
 .total a{  
     color: black;  
+    padding-top: 20px !important;
+    text-decoration: none;
+}
+
+.total a:hover{
+    background-color: #363434;
+    color: white;
+    border-radius: 10px;
 }
 
 .header h1{
