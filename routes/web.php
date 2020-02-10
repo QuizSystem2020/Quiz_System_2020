@@ -19,4 +19,5 @@ Route::get('/', function () {
 Route::get('/teacher', 'TeacherController@index');
 Route::get('/suallar', 'TeacherController@suallar');
 Route::get('/quizler', 'TeacherController@quizler');
+Route::get('/teacher/quizler/title', 'TeacherController@title');
 Route::get('/student', 'StudentController@index');

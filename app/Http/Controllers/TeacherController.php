@@ -15,4 +15,7 @@ class TeacherController extends Controller
     public function quizler(){
         return view('teacher_quizler');
     }
+    public function title(){
+        return view('teacher_quizler_title');
+    }
 }
