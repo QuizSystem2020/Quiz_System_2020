@@ -2,38 +2,6 @@
 
 @section('content')
 
-<style>
-.quiz_question{
-    width: 600px;
-    margin: 0px 0px 25px 250px;
-    padding: 20px!important;
-    border: 1.5px solid #797a79!important;
-    border-radius: 5px;
-    word-break: break-word;
-}
-.quiz_question .question_title{
-    font-size: 20px;
-    font-weight: bold;
-}
-.h5_settings{
-    font-size: 36px;
-    margin: 30px 0px 40px 0px;
-}
-.btn-create{
-    width: 180px;
-    height: 50px;
-    background-color: #00c458;
-    margin-top: 30px;
-    color: #fff;
-}
-.btn-add{
-    background-color: black;
-    border-radius: 100%;
-}
-.btn-add i{
-    color: #fff;
-}
-</style>
 
     <body>
         <div class="container">

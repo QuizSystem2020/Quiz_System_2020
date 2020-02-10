@@ -33,4 +33,7 @@ class StudentController extends Controller
     public function islenmistest(){
         return view('islenmistest');
     }
+    public function again(){
+        return view('again');
+    }
 }

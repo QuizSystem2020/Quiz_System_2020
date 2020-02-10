@@ -1,7 +1,7 @@
 @extends('root')
 
 @section('content')
-<body>
+<body class="body_enter">
     <div class="container">
     <div class="row">
         <div class="col-12 profil-picture text-center">

@@ -17,10 +17,7 @@ Route::get('/', function () {
 Route::get('/teacher', 'TeacherController@index');
 Route::get('/suallar', 'TeacherController@suallar');
 Route::get('/quizler', 'TeacherController@quizler');
-<<<<<<< HEAD
 Route::get('/teacher/quizler/title', 'TeacherController@title');
-Route::get('/student', 'StudentController@index');
-=======
 
 
 Route::get('/student', 'StudentController@index');
@@ -32,5 +29,6 @@ Route::get('/publictest', 'StudentController@publictest');
 Route::get('/privatetest', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 
+Route::get('/again', 'StudentController@again');
 
->>>>>>> 99e8f25cddb7a127a93868dc55c77ae069f84bff
+
