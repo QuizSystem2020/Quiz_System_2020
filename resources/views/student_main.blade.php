@@ -16,9 +16,9 @@
         </div>
         <div class="row">
             <div class="col-12 buttons">
-                <a href=""><button class="btn ">İşlənmiş Quizlər</button></a>
-                <a href=""><button class="btn">Private</button></a>
-                <a href=""><button class="btn">Public</button></a>
+                <a href="/islenmis"><button class="btn btn-1st">İşlənmiş Quizlər</button></a>
+                <a href="/private"><button class="btn btn-1st">Private</button></a>
+                <a href="/public"><button class="btn btn-1st">Public</button></a>
             </div>
         </div>   
     </div>
