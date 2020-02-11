@@ -18,3 +18,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/teacher', 'TeacherController@index');
+Route::get('/suallar', 'TeacherController@suallar');
+Route::get('/quizler', 'TeacherController@quizler');
+Route::get('/teacher/quizler/title', 'TeacherController@title');
+
+
+Route::get('/student', 'StudentController@index');
+Route::get('/public', 'StudentController@public');
+Route::get('/private', 'StudentController@private');
+Route::get('/islenmis', 'StudentController@islenmis');
+
+Route::get('/publictest', 'StudentController@publictest');
+Route::get('/privatetest', 'StudentController@privatetest');
+Route::get('/islenmistest', 'StudentController@islenmistest');
+
+Route::get('/again', 'StudentController@again');
+
+
