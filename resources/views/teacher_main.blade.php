@@ -10,7 +10,11 @@
         </div>
         <div class="row">
             <div class="col-12 teacher-name">
+<<<<<<< HEAD
                 <h4>{{Auth::user()->name }} {{Auth::user()->surname}}</h4>
+=======
+                <h4>Asli Sadigova</h4>
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
                 <p>Səhifənizə xoş gəlmisiniz!</p>
             </div>
         </div>

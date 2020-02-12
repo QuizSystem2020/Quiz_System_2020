@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
 <style>
 .quiz_question{
     width: 600px;
@@ -34,6 +35,8 @@
     color: #fff;
 }
 </style>
+=======
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
 
     <body>
         <div class="container">

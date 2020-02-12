@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
     
 <style>
 .quiz_question{
@@ -40,6 +41,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center col-sm-12">
+=======
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
                     <button type="button" class="btn btn-lg btn-create" data-toggle="modal" data-target="#myModal">Yeni sual yarat</button>
                     <div id="myModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -66,6 +73,10 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
             <div class="row">
                 <div class="col-12">
                     <h5 class="h5_settings text-center">Mövcud Suallar</h5>

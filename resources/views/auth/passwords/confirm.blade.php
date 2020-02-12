@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 
+=======
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Confirm Password') }}</div>
+
+                <div class="card-body">
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
                     {{ __('Please confirm your password before continuing.') }}
 
                     <form method="POST" action="{{ route('password.confirm') }}">

@@ -34,6 +34,7 @@
             <div class="col-12">
                 <h5 class="h5_settings text-center">Mövcud Quizlər</h5>
             </div>
+<<<<<<< HEAD
             <div class="row quiz_list">
                 <div class="col-3">
                     <a href="/teacher/quizler/title"><h3>PHP</h3></a>
@@ -51,6 +52,25 @@
                     <a href="/teacher/quizler/title"><h3>CSS</h3></a>
                 </div>
                 <div class="col-3">
+=======
+            <div class="row col-12 quiz_list">
+                <div class="col-md-3 col-sm-3">
+                    <a href="/teacher/quizler/title"><h3>PHP</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/teacher/quizler/title"><h3>LARAVEL</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/teacher/quizler/title"><h3>JAVA SCRIPT</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/teacher/quizler/title"><h3>AJAX</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/teacher/quizler/title"><h3>CSS</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
                     <a href="/teacher/quizler/title"><h3>ALQORITM</h3></a>
                 </div>
             </div>

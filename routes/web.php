@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -23,8 +24,31 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]); 
 
 
+=======
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
 Route::get('/teacher', 'TeacherController@index');
 Route::get('/suallar', 'TeacherController@suallar');
 Route::get('/quizler', 'TeacherController@quizler');
 Route::get('/teacher/quizler/title', 'TeacherController@title');
+<<<<<<< HEAD
 Route::get('/student', 'StudentController@index');
+=======
+
+
+Route::get('/student', 'StudentController@index');
+Route::get('/public', 'StudentController@public');
+Route::get('/private', 'StudentController@private');
+Route::get('/islenmis', 'StudentController@islenmis');
+
+Route::get('/publictest', 'StudentController@publictest');
+Route::get('/privatetest', 'StudentController@privatetest');
+Route::get('/islenmistest', 'StudentController@islenmistest');
+
+Route::get('/again', 'StudentController@again');
+
+
+>>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d

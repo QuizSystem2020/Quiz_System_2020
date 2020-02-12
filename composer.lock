@@ -424,6 +424,18 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+            "version": "v6.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "9e78f1aeb2c60bd7badcbafc352a9a2c5863c60c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9e78f1aeb2c60bd7badcbafc352a9a2c5863c60c",
+                "reference": "9e78f1aeb2c60bd7badcbafc352a9a2c5863c60c",
+=======
             "version": "v6.13.1",
             "source": {
                 "type": "git",
@@ -434,6 +446,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/f0059760814b76fb5f98bb80628607c7560ebe58",
                 "reference": "f0059760814b76fb5f98bb80628607c7560ebe58",
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
                 "shasum": ""
             },
             "require": {
@@ -521,9 +534,15 @@
                 "ext-posix": "Required to use all features of the queue worker.",
                 "ext-redis": "Required to use the Redis cache and queue drivers.",
                 "filp/whoops": "Required for friendly error pages in development (^2.4).",
+<<<<<<< HEAD
+                "fzaninotto/faker": "Required to use the eloquent factory builder (^1.9.1).",
+                "guzzlehttp/guzzle": "Required to use the Mailgun mail driver and the ping methods on schedules (^6.0).",
+                "laravel/tinker": "Required to use the tinker console command (^2.0).",
+=======
                 "fzaninotto/faker": "Required to use the eloquent factory builder (^1.4).",
                 "guzzlehttp/guzzle": "Required to use the Mailgun mail driver and the ping methods on schedules (^6.0).",
                 "laravel/tinker": "Required to use the tinker console command (^1.0).",
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
                 "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
@@ -567,6 +586,22 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+            "time": "2020-02-04T14:38:06+00:00"
+        },
+        {
+            "name": "laravel/tinker",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/tinker.git",
+                "reference": "37579c93271ec30ef099dd633ec7c2de5e5fb112"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/37579c93271ec30ef099dd633ec7c2de5e5fb112",
+                "reference": "37579c93271ec30ef099dd633ec7c2de5e5fb112",
+=======
             "time": "2020-01-28T21:44:01+00:00"
         },
         {
@@ -581,6 +616,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/tinker/zipball/d8ce361f2fd979c03e5f66c79d4a95a1c1e68640",
                 "reference": "d8ce361f2fd979c03e5f66c79d4a95a1c1e68640",
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
                 "shasum": ""
             },
             "require": {
@@ -592,7 +628,12 @@
                 "symfony/var-dumper": "^4.0|^5.0"
             },
             "require-dev": {
+<<<<<<< HEAD
+                "mockery/mockery": "^1.3.1",
+                "phpunit/phpunit": "^8.0|^9.0"
+=======
                 "phpunit/phpunit": "^8.0"
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
             },
             "suggest": {
                 "illuminate/database": "The Illuminate Database package (^6.0|^7.0)."
@@ -630,7 +671,68 @@
                 "laravel",
                 "psysh"
             ],
+<<<<<<< HEAD
+            "time": "2020-02-05T15:00:44+00:00"
+=======
             "time": "2020-01-14T16:58:39+00:00"
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
+        },
+        {
+            "name": "laravel/ui",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "0287d4eee80aad718bdf7f90117cfe720c493064"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/0287d4eee80aad718bdf7f90117cfe720c493064",
+                "reference": "0287d4eee80aad718bdf7f90117cfe720c493064",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.8|^6.0",
+                "illuminate/filesystem": "~5.8|^6.0",
+                "illuminate/support": "~5.8|^6.0",
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Ui\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel UI utilities and presets.",
+            "keywords": [
+                "laravel",
+                "ui"
+            ],
+            "time": "2019-12-20T15:09:01+00:00"
         },
         {
             "name": "laravel/ui",
@@ -827,6 +929,18 @@
         },
         {
             "name": "league/flysystem",
+<<<<<<< HEAD
+            "version": "1.0.64",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d13c43dbd4b791f815215959105a008515d1a2e0",
+                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0",
+=======
             "version": "1.0.63",
             "source": {
                 "type": "git",
@@ -837,6 +951,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
                 "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
                 "shasum": ""
             },
             "require": {
@@ -848,7 +963,11 @@
             },
             "require-dev": {
                 "phpspec/phpspec": "^3.4",
+<<<<<<< HEAD
+                "phpunit/phpunit": "^5.7.26"
+=======
                 "phpunit/phpunit": "^5.7.10"
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -907,7 +1026,11 @@
                 "sftp",
                 "storage"
             ],
+<<<<<<< HEAD
+            "time": "2020-02-05T18:14:17+00:00"
+=======
             "time": "2020-01-04T16:30:31+00:00"
+>>>>>>> 28726a6cdb02c1d14bfd1e937b403d6f50f62628
         },
         {
             "name": "monolog/monolog",
