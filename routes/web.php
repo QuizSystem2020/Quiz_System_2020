@@ -29,3 +29,7 @@ Route::get('/privatetest', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
