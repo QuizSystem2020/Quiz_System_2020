@@ -61,6 +61,10 @@ a:hover{
 .quiz_list{
     padding-left: 180px;
     margin-top: 40px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a37dd0142eed3f97878fdc5dbc7d2b2234a35c9
 }
 .quiz_list .col-3{
     padding-right: 0px !important;
@@ -78,14 +82,26 @@ a:hover{
     -moz-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a37dd0142eed3f97878fdc5dbc7d2b2234a35c9
 .quiz_list .col-3:hover{
     background-color: black;
     transition: 0.5s;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a37dd0142eed3f97878fdc5dbc7d2b2234a35c9
 .quiz_list .col-md-3:hover{
     background-color: black;
     transition: 0.5s;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a37dd0142eed3f97878fdc5dbc7d2b2234a35c9
 
 @media only screen and (max-width: 600px) {
     .quiz_list{
@@ -102,3 +118,7 @@ a:hover{
         font-size: 20px;
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a37dd0142eed3f97878fdc5dbc7d2b2234a35c9

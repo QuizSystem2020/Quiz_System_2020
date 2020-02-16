@@ -52,7 +52,6 @@
         margin: 0px 0px 25px 10%;
     }
 }
-
 </style>
 
 @yield('content')

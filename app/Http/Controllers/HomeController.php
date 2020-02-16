@@ -1,11 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Auth;
-=======
 
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,11 +13,12 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-<<<<<<< HEAD
-        $this->middleware(['auth', 'verified']);
-=======
+
         $this->middleware('auth');
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
+
+        $this->middleware(['auth', 'verified']);
+
+        $this->middleware('auth');
     }
 
     /**
@@ -31,7 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
+
+        return view('home');
+
+
         if($id = Auth::user()->ismentor == 1)
         {
             return view('teacher_main');
@@ -40,8 +40,7 @@ class HomeController extends Controller
             return view('student_main');
         }
         
-=======
+
         return view('home');
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
     }
 }

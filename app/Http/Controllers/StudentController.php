@@ -9,8 +9,6 @@ class StudentController extends Controller
     public function index(){
         return view('student_main');
     }
-<<<<<<< HEAD
-=======
 
     public function public(){
         return view('public');
@@ -38,5 +36,5 @@ class StudentController extends Controller
     public function again(){
         return view('again');
     }
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
+
 }
