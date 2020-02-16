@@ -13,6 +13,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+
+        $this->middleware('auth');
+
+        $this->middleware(['auth', 'verified']);
+
         $this->middleware('auth');
     }
 
@@ -23,6 +28,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        return view('home');
+
+
+        if($id = Auth::user()->ismentor == 1)
+        {
+            return view('teacher_main');
+        }else
+        {
+            return view('student_main');
+        }
+        
+
         return view('home');
     }
 }

@@ -1,6 +1,8 @@
 body{
     margin: 0px;
     padding: 0px;
+}
+.body_enter{
     background-color:#2b2b2b;
 }
 a{
@@ -33,11 +35,11 @@ a:hover{
     height: 60px;
     font-size: 18px;
     margin-left: 20px;
-    color: #bfbfbf;
-    background-color: black;
+    margin-top: 1%;
 }
 .btn-1st:hover{
-    border: 2px solid #fff;
+    background-color: black;
+    color: #fff;
 }
 .buttons{
     text-align: center;
@@ -47,10 +49,61 @@ a:hover{
     height: 50px;
     background-color: #00c458;
     margin-top: 30px;
+    color: #fff;
+}
+.btn-create:hover{
+    border: 2px solid black;
+}
+.h5_settings{
+    font-size: 36px;
+    margin-top: 40px;
 }
 .quiz_list{
-    background-color: #fff;
+    padding-left: 180px;
+    margin-top: 40px;
+
 }
-.quiz_list .col-4{
-    margin: 20px;
+.quiz_list .col-3{
+    padding-right: 0px !important;
 }
+.quiz_list .col-md-3{
+    margin: 10px;
+    width: 200px!important;
+    height: 200px;
+    text-align: center;
+    border-radius: 5px!important;
+    background-color: #9a9c9a;
+    color: #fff;
+    padding-top: 75px;
+    -webkit-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
+    box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
+}
+
+.quiz_list .col-3:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+
+.quiz_list .col-md-3:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .quiz_list{
+        padding-left: 15%;
+        margin-top: 40px;
+        padding-right: 0px !important;
+    }
+    .quiz_list .col-md-3 {
+        width: 40% !important;
+        height: 140px;
+        padding-top: 55px;
+    }
+    .quiz_list .col-md-3 h3 {
+        font-size: 20px;
+    }
+  }
+

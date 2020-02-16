@@ -1,6 +1,7 @@
 @extends('root')
 
 @section('content')
+<body class="body_enter">
     <div class="container">
     <div class="row">
         <div class="col-12 profil-picture text-center">
@@ -9,6 +10,9 @@
         </div>
         <div class="row">
             <div class="col-12 teacher-name">
+
+               
+
                 <h4>Asli Sadigova</h4>
                 <p>Səhifənizə xoş gəlmisiniz!</p>
             </div>
@@ -20,4 +24,5 @@
             </div>
         </div>   
     </div>
+</body>
 @endsection

@@ -1,65 +1,35 @@
-@extends('root2')
+@extends('root')
 
 @section('content')
-   <div class="container">
-     <div class="row">
-       <div class="col-12">
-         <div class="header">
-             <h1 class="text-center">Private testlər</h1>
-          </div>
-       </div>
-
-        <div class="total d-flex">
-         <a class="col-4 pb-4" href="/privatetest">
-           <div class="item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-         <a class="col-4 pb-4 " href="/privatetest">
-           <div class="item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-         <a class="col-4 pb-4" href="/privatetest">
-           <div class="item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-         <a class="col-4 pb-4" href="/privatetest">
-           <div class=" item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-         <a class="col-4 pb-4" href="/privatetest">
-           <div class="item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-         <a class="col-4 pb-4" href="/privatetest">
-           <div class="item">
-           <h3>PHP</h3>
-           <p>Sual sayı: 12</p>
-           <p>Müəllif: Könül Bayramova</p>
-         </div>
-         </a>
-
-
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="h5_settings text-center">Private Quizlər</h5>
+            </div>
+            <div class="row quiz_list">
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>PHP</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>LARAVEL</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>JAVA SCRIPT</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>AJAX</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>CSS</h3></a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="/privatetest"><h3>ALQORITM</h3></a>
+                </div>
+            </div>
+            
         </div>
-     </div>
-   </div>
+    </div>
+
+</body>
 @endsection
