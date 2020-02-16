@@ -35,11 +35,7 @@ a:hover{
     height: 60px;
     font-size: 18px;
     margin-left: 20px;
-<<<<<<< HEAD
-    
-=======
     margin-top: 1%;
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
 }
 .btn-1st:hover{
     background-color: black;
@@ -65,14 +61,11 @@ a:hover{
 .quiz_list{
     padding-left: 180px;
     margin-top: 40px;
-<<<<<<< HEAD
 }
 .quiz_list .col-3{
-=======
     padding-right: 0px !important;
 }
 .quiz_list .col-md-3{
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
     margin: 10px;
     width: 200px!important;
     height: 200px;
@@ -85,19 +78,14 @@ a:hover{
     -moz-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
 }
-<<<<<<< HEAD
 .quiz_list .col-3:hover{
     background-color: black;
     transition: 0.5s;
 }
-=======
 .quiz_list .col-md-3:hover{
     background-color: black;
     transition: 0.5s;
 }
-/* ======================================================
-=========================================================
-========================================================= */
 
 @media only screen and (max-width: 600px) {
     .quiz_list{
@@ -114,4 +102,3 @@ a:hover{
         font-size: 20px;
     }
   }
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
