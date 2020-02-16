@@ -57,15 +57,15 @@
                                 <label for="">a)</label>
                                 <input type="text" name="option_a" placeholder="Cavab variantı" required>
                                 <select>
-                                  <option name="is_correct" value="yanlis">Yanlış</option>
-                                  <option name="is_correct" value="dogru">Doğru</option>
+                                  <option name="is_correct" value="0">Yanlış</option>
+                                  <option name="is_correct" value="1">Doğru</option>
                                 </select>
                                  <br><br>
                                 <label for="">b)</label>
                                 <input type="text" name="option_b" placeholder="Cavab variantı" required>
                                 <select>
-                                  <option name="is_correct2" value="yanlis">Yanlış</option>
-                                  <option name="is_correct2" value="dogru">Doğru</option>
+                                  <option name="is_correct2" value="0">Yanlış</option>
+                                  <option name="is_correct2" value="1">Doğru</option>
                                 </select>
                                  <br><br>
                                 <button class="btn btn-add" id="add_option"><i class="fas fa-plus"></i></button> <br><br>
@@ -141,24 +141,24 @@
                     if(maxAppend == 1){
                         $("#add_option").before(`<label for=''>c)</label> <input type='text' name='option_c' placeholder='Cavab variantı'> 
                                 <select>
-                                  <option name="is_correct3" value="yanlis">Yanlış</option>
-                                  <option name="is_correct3" value="dogru">Doğru</option>
+                                  <option name="is_correct3" value="0">Yanlış</option>
+                                  <option name="is_correct3" value="1">Doğru</option>
                                 </select>
                         <br><br>`);  
                     }
                     else if(maxAppend == 2){
                         $("#add_option").before(`<label for=''>d)</label> <input type='text' name='option_d' placeholder='Cavab variantı'> 
                            <select>
-                                  <option name="is_correct4" value="yanlis">Yanlış</option>
-                                  <option name="is_correct4" value="dogru">Doğru</option>
+                                  <option name="is_correct4" value="0">Yanlış</option>
+                                  <option name="is_correct4" value="1">Doğru</option>
                             </select>
                         <br><br>`);  
                     }
                     else{
                         $("#add_option").before(`<label for=''>e)</label> <input type='text' name='option_e' placeholder='Cavab variantı'>
                              <select>
-                                  <option name="is_correct5" value="yanlis">Yanlış</option>
-                                  <option name="is_correct5" value="dogru">Doğru</option>
+                                  <option name="is_correct5" value="0">Yanlış</option>
+                                  <option name="is_correct5" value="1">Doğru</option>
                              </select>  
                         <br><br>`);
                         $("#add_option").hide();  

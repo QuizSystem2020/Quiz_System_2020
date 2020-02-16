@@ -25,8 +25,8 @@ class QuizTitleRequest extends FormRequest
     {
         return [
             'topic' => 'required',
-            'hour' => 'required',
-            'minute' => 'required',
+            'hours' => '',
+            'minutes' => '',
             'show' => 'required',
         ];
     }

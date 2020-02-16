@@ -29,9 +29,9 @@ class SuallarRequest extends FormRequest
 
             'option_a' => 'required',
             'option_b' => 'required',
-            'option_c' => 'min:2',
-            'option_d' => 'min:2',
-            'option_e' => 'min:2',
+            'option_c' => '',
+            'option_d' => '',
+            'option_e' => '',
             // 'is_correct' => 'min:2',
             // 'is_correct2' => 'min:2',
             // 'is_correct3' => 'min:2',

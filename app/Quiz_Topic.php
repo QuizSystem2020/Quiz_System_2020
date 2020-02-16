@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Quiz_Topic extends Model
 {
-    protected $quiz_topic = 'quiz_topic';
+    use SoftDeletes;
+    protected $table = 'quiztopics';
 }

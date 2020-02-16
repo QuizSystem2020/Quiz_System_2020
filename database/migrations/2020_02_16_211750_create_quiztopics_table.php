@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuizTopicsTable extends Migration
+class CreateQuiztopicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateQuizTopicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('quiz_topics', function (Blueprint $table) {
+        Schema::create('quiztopics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('topic');
             $table->string('is_public');
@@ -30,6 +30,6 @@ class CreateQuizTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quiz_topics');
+        Schema::dropIfExists('quiztopics');
     }
 }
