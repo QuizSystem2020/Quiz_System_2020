@@ -7,6 +7,8 @@ use App\Quiz_Topic;
 use App\Http\Requests\SuallarRequest;
 use App\Http\Requests\QuizTitleRequest;
 use Illuminate\Http\Request;
+use Auth;
+use Cache;
 
 class TeacherController extends Controller
 {
@@ -50,11 +52,19 @@ class TeacherController extends Controller
     public function insert_quiz_topic(QuizTitleRequest $request){
         
         $topic = new Quiz_Topic;
+        $print = new Quiz_Topic;
+        $print = $print::where('director', Auth::user()->id)->get()->toArray();
+        // dd($print);
         $topic->topic = $request->topic;
         $topic->test_time = $request->input('hours')*60+$request->input('minutes'); 
         $topic->is_public = $request->input('show');
-        $topic->director = '5';
+        $topic->director = Auth::user()->id;
         $topic->save();
-        return redirect('/quizler');
+        $topic = Cache::forget('key');
+        // dd($topic);
+        
+        return view('teacher_quizler',[
+            'print' => $print
+        ]);
     }
 }

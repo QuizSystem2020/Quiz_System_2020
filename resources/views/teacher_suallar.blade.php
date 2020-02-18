@@ -158,7 +158,7 @@
                         $("#add_option").before(`<label for=''>e)</label> <input type='text' name='option_e' placeholder='Cavab variantı'>
                              <select>
                                   <option name="is_correct5" value="0">Yanlış</option>
-                                  <option name="is_correct5" value="1">Doğru</option>
+                                  <option name="is_correct5" value="1   ">Doğru</option>
                              </select>  
                         <br><br>`);
                         $("#add_option").hide();  
