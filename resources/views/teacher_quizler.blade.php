@@ -129,24 +129,11 @@
                 <h5 class="h5_settings text-center">Mövcud Quizlər</h5>
             </div>
             <div class="row col-12 quiz_list">
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>PHP</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>LARAVEL</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>JAVA SCRIPT</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>AJAX</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>CSS</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/teacher/quizler/title"><h3>ALQORITM</h3></a>
-                </div>
+                @foreach($print as $data)
+                    <div class="col-md-3 col-sm-3">
+                        <a href="/teacher/quizler/title"><h3>{{strtoupper($data['topic'])}}</h3></a>
+                    </div>
+                @endforeach
             </div>    
         </div>
     </div>
