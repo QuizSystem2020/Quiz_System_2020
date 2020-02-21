@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+    
+
     <form   action="{{route('login')}}" method="post" class="mt-2 w-100">
         @csrf
         <h1>Daxil Ol</h1>

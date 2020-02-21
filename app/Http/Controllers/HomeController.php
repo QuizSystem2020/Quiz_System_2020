@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Support\Facades\Auth;
+
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +17,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+
+        $this->middleware('auth');
 
         $this->middleware(['auth', 'verified']);
 
@@ -27,6 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('home');
         if($id = Auth::user()->ismentor == 1)
         {
             return view('teacher_main');
@@ -34,7 +40,6 @@ class HomeController extends Controller
         {
             return view('student_main');
         }
-        
-        
+        return view('home');
     }
 }

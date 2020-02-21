@@ -31,8 +31,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/teacher', 'TeacherController@index');
 Route::get('/suallar', 'TeacherController@suallar');
+Route::post('/suallar/save', 'TeacherController@suallarSave');
+
 Route::get('/quizler', 'TeacherController@quizler');
 Route::get('/teacher/quizler/title', 'TeacherController@title');
+Route::post('/insert_quiz_topic', 'TeacherController@insert_quiz_topic');
 
 Route::get('/student', 'StudentController@index');
 
@@ -42,9 +45,12 @@ Route::get('/public', 'StudentController@public');
 Route::get('/private', 'StudentController@private');
 Route::get('/islenmis', 'StudentController@islenmis');
 
-Route::get('/publictest', 'StudentController@publictest');
+Route::get('/publictest/{id}', 'StudentController@publictest');
 Route::get('/privatetest', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 
 Route::get('/again', 'StudentController@again');
 
+
+
+Route::get('/publictest', 'StudentController@publictest');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Quiz_Topic;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -9,14 +9,17 @@ class StudentController extends Controller
     public function index(){
         return view('student_main');
     }
-<<<<<<< HEAD
-=======
 
     public function public(){
-        return view('public');
+        $data= Quiz_Topic::select('id','topic','director','test_time')->where('is_public' , 1)->paginate(5);
+        // dd($data);
+        return view('public' , [
+            'data'=> $data
+        ]);
     }
 
     public function private(){
+     
         return view('private');
     }
 
@@ -25,6 +28,9 @@ class StudentController extends Controller
     }
 
     public function publictest(){
+        
+        // $query= Quiz_Topic::select('id','topic','director','test_time')->where('is_public' , 1)->find($id);
+        // dd($query);
         return view('publictest');
     }
 
@@ -38,5 +44,5 @@ class StudentController extends Controller
     public function again(){
         return view('again');
     }
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
+
 }

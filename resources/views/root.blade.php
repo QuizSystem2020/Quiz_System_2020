@@ -9,13 +9,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/417cc65c8e.js"></script>
     <script src="jquery-3.4.1.min.js"></script>
-<<<<<<< HEAD
-<link rel="stylesheet" href="{{asset('css/teacher.css')}}">
-    <title>QuizSystem</title>
-</head>
-
-=======
-    <link rel="stylesheet" href="css/teacher.css">
+    <link rel="stylesheet" href="{{asset('css/teacher.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    
     <title>QuizSystem</title>
 </head>
 
@@ -52,23 +48,13 @@
     color: #fff;
 }
 
-/* ======================================================
-=========================================================
-========================================================= */
-
 @media only screen and (max-width: 600px) {
     .quiz_question{
-    width:80%;
-    margin: 0px 0px 25px 10%;
+        width:80%;
+        margin: 0px 0px 25px 10%;
+    }
 }
-}
-
-
-
-
 </style>
-
->>>>>>> c67004209b3bf2903d93f354d6732a17ece5c48d
 
 @yield('content')
 
