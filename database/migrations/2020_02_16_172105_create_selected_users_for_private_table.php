@@ -17,6 +17,7 @@ class CreateSelectedUsersForPrivateTable extends Migration
             $table->bigIncrements('id');
             $table->string('topic_id');
             $table->string('user_id');
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }

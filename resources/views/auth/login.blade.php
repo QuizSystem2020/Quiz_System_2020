@@ -6,6 +6,15 @@
 
     <form   action="{{route('login')}}" method="post" class="mt-2 w-100">
         @csrf
+        @if ($errors->any())
+                     <div class="alert alert-danger">
+                         <ul>
+                             @foreach ($errors->all() as $error)
+                                 <li>{{ $error }}</li>
+                             @endforeach
+                         </ul>
+                     </div>
+                 @endif
         <h1>Daxil Ol</h1>
        
         <div class="form-content">

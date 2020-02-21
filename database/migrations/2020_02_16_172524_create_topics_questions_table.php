@@ -17,6 +17,7 @@ class CreateTopicsQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('topic_id');
             $table->string('sual_id');
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }

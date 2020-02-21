@@ -4,6 +4,7 @@
 <div class="container">
     <form  method="POST" action="{{ route('register') }}" class="mt-3 w-100">
                      @csrf
+                     <h2 class="text-center">Daxil Ol</h2>
                      @if ($errors->any())
                      <div class="alert alert-danger">
                          <ul>
@@ -13,7 +14,7 @@
                          </ul>
                      </div>
                  @endif
-         <h2 class="text-center">Daxil Ol</h2>
+       
          <div class="form-content mt-sm-3">
              
                  <input id="user-name" type="text" class="form-input @error('name') is-error @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Ad:">

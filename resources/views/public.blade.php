@@ -8,20 +8,20 @@
             <div class="col-12">
                 <h5 class="h5_settings text-center">Public Quizlər</h5>
             </div>
-            <div class="row quiz_list">
+            <div class="quiz_list">
                 @foreach ($data as $item)
                 <a href="/publictest/{{$item->id}}">
-                    <div class="col-md-3 col-sm-3">
+                    <div class="quiz_topic">
                         <h3>{{$item->topic}}</h3>
                     </div>
                 </a>
                 @endforeach
             </div>
-            <nav>
-                {{$data->links()}}
-            </nav>
+           
         </div>
     </div>
-
+    <nav class='pagination'>
+        {{$data->links()}}
+    </nav>
 </body>
 @endsection
