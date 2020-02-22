@@ -46,7 +46,7 @@ Route::get('/private', 'StudentController@private');
 Route::get('/islenmis', 'StudentController@islenmis');
 
 Route::get('/publictest/{id}', 'StudentController@publictest');
-Route::get('/privatetest', 'StudentController@privatetest');
+Route::get('/privatetest/{id}', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 
 Route::get('/again', 'StudentController@again');

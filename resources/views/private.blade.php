@@ -11,9 +11,11 @@
             </div>
             <div class="quiz_list">
                 @foreach ($data as $item)
-                <a href="/publictest/{{$item->id}}">
+                <a href="/privatetest/{{$item->id}}">
                     <div class="quiz_topic">
                         <h3>{{$item->topic}}</h3>
+                        <span class='director'>{{$item->name}} {{$item->surname}}</span>
+                        <span class='test_time'>test vaxtı : {{$item->test_time}}</span>
                     </div>
                 </a>
                 @endforeach

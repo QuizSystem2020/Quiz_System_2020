@@ -81,6 +81,7 @@ a:hover{
     justify-content: center;
     display: flex;
     align-items: center;
+    position: relative;
 }
 .quiz_topic:hover{
     background-color: black;
@@ -92,6 +93,15 @@ a:hover{
     margin-top: 50px;
 }
 
-
+.director{
+    position: absolute;
+    left: 10px;
+    bottom: 1px;
+}
+.test_time{
+    position: absolute;
+    right: 10px;
+    bottom: 1px;
+}
 
 

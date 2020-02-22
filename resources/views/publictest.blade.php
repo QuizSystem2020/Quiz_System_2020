@@ -7,7 +7,7 @@
    <div class="container">
       <div class="row">
          <div class="col-12">
-            <h5 class="h5_settings text-center">PHP</h5>
+            <h5 class="h5_settings text-center">{{$quiz_topic}}</h5>
          </div>
       </div>
       <div class="row">
@@ -15,11 +15,11 @@
          @foreach($data as $item)
          <div class="col-12">
             <div class="quiz_question">
-               <p class="question_title">{{$item->question}}</p>
-               <input type="radio" name="sual">&nbsp;A)Bilmirəm <br><br>
-               <input type="radio" name="sual">&nbsp;B)Bilmirəm <br><br>
-               <input type="radio" name="sual">&nbsp;C)Bilmirəm <br><br>
-               <input type="radio" name="sual">&nbsp;D)Bilmirəm <br><br>
+               <p class="question_title">{{$item->question}}</p>  
+               @foreach($item->cavab as $item2)
+                  <input type="radio" name="sual">&nbsp;{{$item2}} <br><br>
+               @endforeach
+               
             </div>
          </div>
          @endforeach
