@@ -44,13 +44,17 @@ class TeacherController extends Controller
 
 
     public function quizler(){
-        return view('teacher_quizler');
+        $print = new Quiz_Topic;
+        $print = $print::where('director', Auth::user()->id)->get()->toArray();
+        // dd($print);
+        return view('teacher_quizler',[
+            'print' => $print
+        ]);
     }
     public function title(){
         return view('teacher_quizler_title');
     }
     public function insert_quiz_topic(QuizTitleRequest $request){
-        
         $topic = new Quiz_Topic;
         $print = new Quiz_Topic;
         $print = $print::where('director', Auth::user()->id)->get()->toArray();
