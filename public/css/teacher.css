@@ -103,5 +103,24 @@ a:hover{
     right: 10px;
     bottom: 1px;
 }
+.timer_div{
+    width: 150px;
+    height: 40px;
+    border: 1px solid #797a79!important;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left:100px;
+    overflow:hidden;
+}
+@media only screen and (max-width: 600px) {
+    .timer_div{
+        width: 40px;
+        left:0px;
+    }
+}
 
 

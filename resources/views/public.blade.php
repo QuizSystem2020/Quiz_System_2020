@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h5 class="h5_settings text-center">Private Quizlər</h5>
+                <h5 class="h5_settings text-center">Public Quizlər</h5>
             </div>
             <div class="quiz_list">
                 @foreach ($data as $item)

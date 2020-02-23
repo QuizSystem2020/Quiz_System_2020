@@ -15,7 +15,7 @@
 
             
 
-                <h4>Asli Sadigova</h4>
+                <h4>{{Auth::user()->name}} {{Auth::user()->surname}} </h4>
                 <p>Səhifənizə xoş gəlmisiniz!</p>
             </div>
         </div>

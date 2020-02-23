@@ -26,15 +26,17 @@ class StudentController extends Controller
     }
 
     public function private(){
+    
         $data= selected_users_for_private::select('quiztopics.id' ,'topic' , 'name' , 'surname', 'test_time')
         ->where('user_id' , Auth::user()->id)
         ->join('quiztopics' , 'quiztopics.id' , '=' , 'topic_id' )
         ->join('users' , 'users.id' , '=' , 'quiztopics.director')
         ->where('is_public', 0)
         ->paginate(6);
-       
+        
         return view('private' , [
-            'data' => $data
+            'data' => $data,
+           
         ]);
     }
 
@@ -44,7 +46,7 @@ class StudentController extends Controller
 
     public function publictest($id){
        
-         $data= topics_questions::select(DB::raw('suallars.question  , group_concat(cavablars.cavab) as cavab'))
+         $data= topics_questions::select(DB::raw('suallars.question , test_time  , group_concat(cavablars.cavab) as cavab'))
          ->join('suallars' , 'suallars.sual_id' , '=' , 'topics_questions.sual_id')
          ->join('cavablars', 'cavablars.sual_id', '=' ,'suallars.sual_id' )
          ->join('quiztopics' , 'quiztopics.id' , '=' , 'topic_id')
@@ -58,10 +60,14 @@ class StudentController extends Controller
             $data[$key]->cavab = explode(',', $data[$key]->cavab);
         }
      
-        $quiz_topic = Quiz_Topic::select('topic')->where('id' , $id)->where('is_public',1)->get();
+        $quiz_topic = Quiz_Topic::select('topic' , 'test_time')->where('id' , $id)->where('is_public',1)->get();
+        $variant = ['A' , 'B' ,'C' , 'D' , 'E'];
          return view('publictest' ,[
              'data' =>$data,
-             'quiz_topic' => $quiz_topic[0]->topic
+             'quiz_topic' => $quiz_topic[0]->topic,
+             'variant' => $variant,
+             'test_time' => $quiz_topic[0]->test_time
+             
          ]);
     }
 
@@ -79,9 +85,12 @@ class StudentController extends Controller
        }
     
        $quiz_topic = Quiz_Topic::select()->where('is_public' ,0)->where('id' , $id)->get();
+       $variant = ['A' , 'B' ,'C' , 'D' , 'E'];
        return view('privatetest' ,[
         'data' =>$data,
-        'quiz_topic' => $quiz_topic[0]->topic
+        'quiz_topic' => $quiz_topic[0]->topic,
+        'variant' => $variant,
+        'test_time' => $quiz_topic[0]->test_time
     ]);
     }
 
