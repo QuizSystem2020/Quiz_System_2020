@@ -67,8 +67,6 @@ class TeacherController extends Controller
         $topic = Cache::forget('key');
         // dd($topic);
         
-        return view('teacher_quizler',[
-            'print' => $print
-        ]);
+        return redirect('/quizler');
     }
 }
