@@ -54,3 +54,7 @@ Route::get('/again', 'StudentController@again');
 
 
 Route::get('/publictest', 'StudentController@publictest');
+
+Route::post('/cavabla', 'StudentController@Cavabla');
+
+

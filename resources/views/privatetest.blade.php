@@ -38,7 +38,7 @@ loading...
         
       </div>
       <div class="col-12 text-center mb-5">
-         <button class="btn btn-lg btn-success">Təsdiqlə</button> 
+         <button class="btn btn-lg btn-success complete">Təsdiqlə</button> 
       </div>
    </div>
 </body>

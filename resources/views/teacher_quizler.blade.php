@@ -134,6 +134,7 @@
                  <a href="/teacher/quizler/title">
                     <div class="quiz_topic">
                        <h3>{{strtoupper($data['topic'])}}</h3>
+                       
                     </div>
                     </a>
                 @endforeach
