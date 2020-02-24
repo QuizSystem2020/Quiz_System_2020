@@ -1,35 +1,30 @@
+
 @extends('root')
 
 @section('content')
 <body>
+    
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h5 class="h5_settings text-center">Private Quizlər</h5>
             </div>
-            <div class="row quiz_list">
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>PHP</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>LARAVEL</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>JAVA SCRIPT</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>AJAX</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>CSS</h3></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <a href="/privatetest"><h3>ALQORITM</h3></a>
-                </div>
+            <div class="quiz_list">
+                @foreach ($data as $item)
+                <a href="/privatetest/{{$item->id}}">
+                    <div class="quiz_topic">
+                        <h3>{{$item->topic}}</h3>
+                        <span class='director'>{{$item->name}} {{$item->surname}}</span>
+                        <span class='test_time'>test vaxtı : {{$item->test_time}}</span>
+                    </div>
+                </a>
+                @endforeach
             </div>
-            
+           
         </div>
     </div>
-
+    <nav class='pagination'>
+        {{$data->links()}}
+    </nav>
 </body>
 @endsection

@@ -61,72 +61,66 @@ a:hover{
     margin-top: 40px;
 }
 .quiz_list{
-    padding-left: 180px;
-    margin-top: 40px;
-<<<<<<< HEAD
-
+   width: 100%;
+   flex-wrap: wrap;
+   display: flex;
+   padding-left: 7%;
 }
-.quiz_list .col-3{
-
-
-
-=======
->>>>>>> ee385e29585ce65bb4890361b25255f1508ee287
-}
-.quiz_list .col-3{
-    padding-right: 0px !important;
-}
-.quiz_list .col-md-3{
+.quiz_list a{
     margin: 10px;
-    width: 200px!important;
-    height: 200px;
-    text-align: center;
+}
+.quiz_topic{
+    width: 300px;
+    height: 160px;
     border-radius: 5px!important;
     background-color: #9a9c9a;
     color: #fff;
-    padding-top: 75px;
     -webkit-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> ee385e29585ce65bb4890361b25255f1508ee287
-.quiz_list .col-3:hover{
+.quiz_topic:hover{
     background-color: black;
     transition: 0.5s;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> ee385e29585ce65bb4890361b25255f1508ee287
-.quiz_list .col-md-3:hover{
-    background-color: black;
-    transition: 0.5s;
+.pagination{
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> ee385e29585ce65bb4890361b25255f1508ee287
-
+.director{
+    position: absolute;
+    left: 10px;
+    bottom: 1px;
+}
+.test_time{
+    position: absolute;
+    right: 10px;
+    bottom: 1px;
+}
+.timer_div{
+    width: 150px;
+    height: 40px;
+    border: 1px solid #797a79!important;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left:100px;
+    overflow:hidden;
+}
 @media only screen and (max-width: 600px) {
-    .quiz_list{
-        padding-left: 15%;
-        margin-top: 40px;
-        padding-right: 0px !important;
+    .timer_div{
+        width: 40px;
+        left:0px;
     }
-    .quiz_list .col-md-3 {
-        width: 40% !important;
-        height: 140px;
-        padding-top: 55px;
-    }
-    .quiz_list .col-md-3 h3 {
-        font-size: 20px;
-    }
-<<<<<<< HEAD
-  }
+}
 
-=======
-  }
->>>>>>> ee385e29585ce65bb4890361b25255f1508ee287
+

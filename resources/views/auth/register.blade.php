@@ -4,6 +4,7 @@
 <div class="container">
     <form  method="POST" action="{{ route('register') }}" class="mt-3 w-100">
                      @csrf
+                     <h2 class="text-center">Qeydiyyatdan keç</h2>
                      @if ($errors->any())
                      <div class="alert alert-danger">
                          <ul>
@@ -13,7 +14,7 @@
                          </ul>
                      </div>
                  @endif
-         <h2 class="text-center">Daxil Ol</h2>
+       
          <div class="form-content mt-sm-3">
              
                  <input id="user-name" type="text" class="form-input @error('name') is-error @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Ad:">
@@ -55,7 +56,7 @@
                              @enderror
 
 
-                                 <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Şifrə">
+                                 <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Şifrə:">
 
                              @error('password')
                                  <span class="invalid-feedback" role="alert">
@@ -63,18 +64,18 @@
                                  </span>
                              @enderror
                              
-                             <input id="password-confirm" type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" placeholder="Təkrar şifrə">
+                             <input id="password-confirm" type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" placeholder="Təkrar şifrə:">
                        
-                                 <label class="" for="">Ne kimi qeydiyatdan kecirsiz?</label>
+                                 <label class="" for="">Nə kimi qeydiyatdan keçirsiniz?</label>
                                  <br>
                                 <label for="opt2" class="radio">
                                     <input type="radio" name="ismentor" id="opt2" class="hidden" value="1"/>
-                                    <span class="label"></span>Mellim   
+                                    <span class="label"></span>Müəllim   
                                   </label>
                                   
                                   <label for="opt3" class="radio">
                                     <input type="radio" name="ismentor" id="opt3" class="hidden" value="0"/>
-                                    <span class="label"></span>Usax
+                                    <span class="label"></span>Şagird
                                   </label>
 
 
@@ -85,9 +86,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                             <input class="form-button" type="submit" name="submit" value="Daxil Ol">
+                             <input class="form-button" type="submit" name="submit" value="Qeydiyyatdan keç">
                              <br><br>
-                             <span class="ml-4">Hesabım Var!</span><a class="ml-2" href="/login">Login</a>
+                             <span class="ml-4">Hesabım Var!</span><a class="ml-2" href="/login">Daxil ol</a>
                             </div>
                         </form>
              

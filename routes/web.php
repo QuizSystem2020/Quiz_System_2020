@@ -46,11 +46,20 @@ Route::get('/public', 'StudentController@public');
 Route::get('/private', 'StudentController@private');
 Route::get('/islenmis', 'StudentController@islenmis');
 Route::get('/publictest/{id}', 'StudentController@publictest');
-Route::get('/privatetest', 'StudentController@privatetest');
+Route::get('/privatetest/{id}', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 Route::get('/again', 'StudentController@again');
 Route::get('/publictest', 'StudentController@publictest');
 
 
+<<<<<<< HEAD
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
+=======
+
+Route::get('/publictest', 'StudentController@publictest');
+
+Route::post('/cavabla', 'StudentController@Cavabla');
+
+
+>>>>>>> f596a7e881f4c5ed8dbeb09aa69d6e664afaa90e

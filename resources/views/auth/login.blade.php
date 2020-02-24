@@ -6,6 +6,15 @@
 
     <form   action="{{route('login')}}" method="post" class="mt-2 w-100">
         @csrf
+        @if ($errors->any())
+                     <div class="alert alert-danger">
+                         <ul>
+                             @foreach ($errors->all() as $error)
+                                 <li>{{ $error }}</li>
+                             @endforeach
+                         </ul>
+                     </div>
+                 @endif
         <h1>Daxil Ol</h1>
        
         <div class="form-content">
@@ -17,7 +26,7 @@
           </span>
           @enderror
           <br>
-       <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="password:">
+       <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="Şifrə:">
          @error('password')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
@@ -27,10 +36,10 @@
        <br>
        @if (Route::has('password.request'))
        <a class="btn btn-link" href="{{ route('password.request') }}">
-           {{ __('Forgot Your Password?') }}
+           {{ __('Şifrəni unutmusunuz?') }}
        </a>
    @endif   <br>
-            <span class="ml-4">Hesabın yoxdu?</span><a class="ml-2" href="/register">Qeydiyyatdan keç</a>
+            <span class="ml-4">Hesabınız yoxdu?</span><a class="ml-2" href="/register">Qeydiyyatdan keçin</a>
         </div>
     </form>
 </div>

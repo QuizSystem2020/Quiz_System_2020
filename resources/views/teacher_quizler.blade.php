@@ -128,12 +128,17 @@
             <div class="col-12">
                 <h5 class="h5_settings text-center">Mövcud Quizlər</h5>
             </div>
-            <div class="row col-12 quiz_list">
-                @foreach($print as $data)
-                    <div class="col-md-3 col-sm-3">
-                        <a href="/teacher/quizler/title"><h3>{{strtoupper($data['topic'])}}</h3></a>
+            <div class="quiz_list">
+          
+                 @foreach($print as $data)
+                 <a href="/teacher/quizler/title">
+                    <div class="quiz_topic">
+                       <h3>{{strtoupper($data['topic'])}}</h3>
+                       
                     </div>
+                    </a>
                 @endforeach
+              
             </div>    
         </div>
     </div>
