@@ -34,8 +34,9 @@ Route::get('/suallar', 'TeacherController@suallar');
 Route::post('/suallar/save', 'TeacherController@suallarSave');
 
 Route::get('/quizler', 'TeacherController@quizler');
-Route::get('/teacher/quizler/title', 'TeacherController@title');
+Route::get('/teacher/quizler/{id}', 'TeacherController@title');
 Route::post('/insert_quiz_topic', 'TeacherController@insert_quiz_topic');
+Route::post('/insert_quiz_question/{id}', 'TeacherController@insert_quiz_question');
 
 Route::get('/student', 'StudentController@index');
 
@@ -51,6 +52,6 @@ Route::get('/islenmistest', 'StudentController@islenmistest');
 
 Route::get('/again', 'StudentController@again');
 
-
-
 Route::get('/publictest', 'StudentController@publictest');
+
+

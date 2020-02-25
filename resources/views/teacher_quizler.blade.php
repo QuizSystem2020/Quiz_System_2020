@@ -131,7 +131,7 @@
             <div class="quiz_list">
                  @foreach($print as $data)
                     <div class="quiz_topic">
-                        <a href="/teacher/quizler/title"><h3>{{strtoupper($data['topic'])}}</h3></a>
+                        <a href="/teacher/quizler/{{$data['id']}}"><h3>{{strtoupper($data['topic'])}}</h3></a>
                     </div>
                    @endforeach
             </div>    

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use App\Suallar;
 use App\Cavablar;
 use App\Quiz_Topic;
+use App\TopicsQuestions;
 use App\Http\Requests\SuallarRequest;
 use App\Http\Requests\QuizTitleRequest;
+use App\Http\Requests\TopicsQuestionsRequest;
 use Illuminate\Http\Request;
 use Auth;
 use Cache;
@@ -39,7 +41,7 @@ class TeacherController extends Controller
         );
         Cavablar::insert($data);
 
-        return redirect('/teacher_suallar');
+        return redirect('/suallar');
     }
 
 
@@ -51,8 +53,19 @@ class TeacherController extends Controller
             'print' => $print
         ]);
     }
-    public function title(){
-        return view('teacher_quizler_title');
+    public function title($id){
+        $suallars = new Suallar;
+        $cavablars= new Cavablar;
+        $topic = new TopicsQuestions;
+        $suallars = $suallars->get()->toArray();
+        $join = $cavablars::leftJoin('suallars', 'suallars.sual_id', '=', 'cavablars.sual_id')->leftJoin('topics_questions', 'topics_questions.sual_id','=','suallars.sual_id')->where('topics_questions.topic_id', $id)->get()->toArray();
+        // dd($join);
+        // dd($suallars);
+        return view('teacher_quizler_title',[
+            'suallars' => $suallars,
+            'id' => $id,
+            'join' => $join
+        ]);
     }
     public function insert_quiz_topic(QuizTitleRequest $request){
         $topic = new Quiz_Topic;
@@ -68,5 +81,16 @@ class TeacherController extends Controller
         // dd($topic);
         
         return redirect('/quizler');
+    }
+    public function insert_quiz_question(TopicsQuestionsRequest $request, $id){
+       
+        $t_q = new TopicsQuestions;
+        $check = new TopicsQuestions;
+        // dd($request->question);
+        $t_q->topic_id = $id;
+        // dd($id);
+        $t_q->sual_id = $request->question;
+        $t_q->save();
+        return back()->withInput();
     }
 }
