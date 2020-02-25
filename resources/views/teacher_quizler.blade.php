@@ -133,8 +133,12 @@
                  @foreach($print as $data)
                  <a href="/teacher/quizler/title">
                     <div class="quiz_topic">
+<<<<<<< HEAD
                        <h3>{{strtoupper($data['topic'])}}</h3>
                        
+=======
+                        <a href="/teacher/quizler/{{$data['id']}}"><h3>{{strtoupper($data['topic'])}}</h3></a>
+>>>>>>> 6e7a0798f78a438f6a2b3f8cf2679617e194af44
                     </div>
                     </a>
                 @endforeach

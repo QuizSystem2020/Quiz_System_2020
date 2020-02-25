@@ -34,8 +34,9 @@ Route::get('/suallar', 'TeacherController@suallar');
 Route::post('/suallar/save', 'TeacherController@suallarSave');
 
 Route::get('/quizler', 'TeacherController@quizler');
-Route::get('/teacher/quizler/title', 'TeacherController@title');
+Route::get('/teacher/quizler/{id}', 'TeacherController@title');
 Route::post('/insert_quiz_topic', 'TeacherController@insert_quiz_topic');
+Route::post('/insert_quiz_question/{id}', 'TeacherController@insert_quiz_question');
 
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
@@ -52,13 +53,18 @@ Route::get('/again', 'StudentController@again');
 Route::get('/publictest', 'StudentController@publictest');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+Route::get('/publictest', 'StudentController@publictest');
+>>>>>>> 6e7a0798f78a438f6a2b3f8cf2679617e194af44
 
 <<<<<<< HEAD
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
 //-*-*-*-*-**-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-**-* Student part-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*
 =======
 
+<<<<<<< HEAD
 >>>>>>> 09d216173a0edf35f41f4fd4ef752b734c78c467
 Route::get('/publictest', 'StudentController@publictest');
 
@@ -66,3 +72,5 @@ Route::post('/cavabla', 'StudentController@Cavabla');
 
 
 >>>>>>> f596a7e881f4c5ed8dbeb09aa69d6e664afaa90e
+=======
+>>>>>>> 6e7a0798f78a438f6a2b3f8cf2679617e194af44
