@@ -129,11 +129,15 @@
                 <h5 class="h5_settings text-center">Mövcud Quizlər</h5>
             </div>
             <div class="quiz_list">
+          
                  @foreach($print as $data)
+                 <a href="/teacher/quizler/title">
                     <div class="quiz_topic">
                         <a href="/teacher/quizler/{{$data['id']}}"><h3>{{strtoupper($data['topic'])}}</h3></a>
                     </div>
-                   @endforeach
+                    </a>
+                @endforeach
+              
             </div>    
         </div>
     </div>

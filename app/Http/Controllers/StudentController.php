@@ -45,29 +45,31 @@ class StudentController extends Controller
     }
 
     public function publictest($id){
-       
-         $data= topics_questions::select(DB::raw('suallars.question , test_time  , group_concat(cavablars.cavab) as cavab'))
+        
+         $data= topics_questions::select(DB::raw('suallars.question , suallars.sual_id , test_time ,group_concat(is_correct) as is_correct , group_concat(cavablars.cavab) as cavab'))
          ->join('suallars' , 'suallars.sual_id' , '=' , 'topics_questions.sual_id')
          ->join('cavablars', 'cavablars.sual_id', '=' ,'suallars.sual_id' )
          ->join('quiztopics' , 'quiztopics.id' , '=' , 'topic_id')
          ->where('topic_id' , $id)
          ->where('is_public' , 1)
          ->groupby('topics_questions.sual_id')
-         ->get();
-        
+        ->orderby('cavablars.id','desc')
+        ->get();
+       
         foreach($data as $key => $value)
         {
             $data[$key]->cavab = explode(',', $data[$key]->cavab);
+            $data[$key]->is_correct = explode(',' , $data[$key]->is_correct);
         }
-     
-        $quiz_topic = Quiz_Topic::select('topic' , 'test_time')->where('id' , $id)->where('is_public',1)->get();
+        print $data;
+        $quiz_topic = Quiz_Topic::select('topic' , 'test_time')->where('id' , $id)->where('is_public',1)->first();
+        // dd($quiz_topic);
         $variant = ['A' , 'B' ,'C' , 'D' , 'E'];
          return view('publictest' ,[
              'data' =>$data,
-             'quiz_topic' => $quiz_topic[0]->topic,
+             'quiz_topic' => $quiz_topic->topic,
              'variant' => $variant,
-             'test_time' => $quiz_topic[0]->test_time
-             
+             'test_time' => $quiz_topic->test_time
          ]);
     }
 
@@ -77,6 +79,7 @@ class StudentController extends Controller
         ->join('cavablars', 'cavablars.sual_id', '=' ,'suallars.sual_id'  )
         ->where('topic_id' , $id)
         ->groupby('topics_questions.sual_id')
+        ->orderby('id','desc')
         ->get();
        
        foreach($data as $key => $value)
@@ -99,6 +102,11 @@ class StudentController extends Controller
     }
     public function again(){
         return view('again');
+    }
+
+    public function Cavabla(Request $request)
+    {
+        dd($request);
     }
 
 }

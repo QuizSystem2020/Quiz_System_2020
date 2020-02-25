@@ -32,6 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         if( Auth::user()->ismentor == 1)
         {
             return view('teacher_main');
