@@ -30,7 +30,7 @@ loading...
             <div class="quiz_question">
                <p class="question_title">{{$item->question}}</p>  
                @foreach($item->cavab as $key2 =>$item2)
-                  <input type="radio" name="sual{{$key}}" value='{{$key2+1}}'>&nbsp; {{$variant[$key2]}})   {{$item2}} <br><br>
+                  <input type="radio" name="sual{{$key}}" value='{{$key2}}'>&nbsp; {{$variant[$key2]}})   {{$item2}} <br><br>
                @endforeach
                
             </div>
@@ -43,30 +43,90 @@ loading...
       </div>
    </div>
 </body>
+
 <script>
 
-var arr = [];
+
 $('.complete').on('click' , function(){
+   var arr = [];
    let  count = {{count($data)}}
    for(var i = 0 ; i < count; i++)
    {
        let radioValue = $("input[name='sual"+i+"']:checked").val();
       if(radioValue == null )
       {
-         radioValue =0
+         radioValue = 'bosh'
       } 
        arr.push(radioValue);
    }
+   console.log(arr)
+   $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+   });
+
    $.ajax({
       url:'/cavabla',
       method:'POST',
-      data:{'cavab': arr},
-      "_token":'{{ csrf_token()}}'
+      data:{'cavab': arr , 'id':{{$quiz_id}}},
+      success : function(response)
+      {
+         console.log('bosh' + response.bosh + 'duz' + response.duz + 'sehv' + response.sehv);
+         alert('bosh : ' + response.bosh + '\nduz :  ' + response.duz + '\nsehv : ' + response.sehv);
+      }
    })
-
-
-   
 })
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+         //   when exam finished
+        if(minutes == 0 && seconds == 0){
+           timer = 0;
+           var arr = [];
+   let  count = {{count($data)}}
+   for(var i = 0 ; i < count; i++)
+   {
+       let radioValue = $("input[name='sual"+i+"']:checked").val();
+      if(radioValue == null )
+      {
+         radioValue = 'bosh'
+      } 
+       arr.push(radioValue);
+   }
+   console.log(arr)
+   $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+   });
+
+   $.ajax({
+      url:'/cavabla',
+      method:'POST',
+      data:{'cavab': arr , 'id':{{$quiz_id}}},
+      success : function(response)
+      {
+         console.log('bosh' + response.bosh + 'duz' + response.duz + 'sehv' + response.sehv);
+         alert('bosh : ' + response.bosh + '\nduz :  ' + response.duz + '\nsehv : ' + response.sehv);
+      }
+   })
+        }
+      //   =================
+    }, 1000);
+}
 </script>
 
 @endsection
