@@ -125,25 +125,32 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <h5 class="h5_settings text-center">Mövcud Quizlər</h5>
             </div>
-            <div class="quiz_list">
-          
-                 @foreach($print as $data)
-                 <a href="/teacher/quizler/title">
-                    <div class="quiz_topic">
-<<<<<<< HEAD
-                       <h3>{{strtoupper($data['topic'])}}</h3>
-                       
-=======
-                        <a href="/teacher/quizler/{{$data['id']}}"><h3>{{strtoupper($data['topic'])}}</h3></a>
->>>>>>> 6e7a0798f78a438f6a2b3f8cf2679617e194af44
+            <div class="col-md-12 text-center">
+                <div class="quiz_list">
+                    @foreach($print as $data)
+                    <div class="col-md-4">
+                        <a href="/teacher/quizler/title">
+                            <div class="quiz_topic">
+                                <a href="/teacher/quizler/{{$data['id']}}/{{$data['is_public']}}">
+                                    <h3>{{strtoupper($data['topic'])}}</h3>
+                                    <sup class="text-center">
+                                        @if($data['is_public'] == 1)
+                                            <p>Public</p>
+                                        @else
+                                            <p>Private</p>
+                                        @endif
+                                    </sup>
+                                </a>
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                @endforeach
-              
-            </div>    
+                    @endforeach
+                </div>    
+            </div>
+            
         </div>
     </div>
 </body>
