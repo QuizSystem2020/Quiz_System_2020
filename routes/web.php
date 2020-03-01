@@ -34,9 +34,13 @@ Route::get('/suallar', 'TeacherController@suallar');
 Route::post('/suallar/save', 'TeacherController@suallarSave');
 
 Route::get('/quizler', 'TeacherController@quizler');
-Route::get('/teacher/quizler/{id}', 'TeacherController@title');
+Route::get('/teacher/quizler/{id}/{is_public}', 'TeacherController@title');
 Route::post('/insert_quiz_topic', 'TeacherController@insert_quiz_topic');
 Route::post('/insert_quiz_question/{id}', 'TeacherController@insert_quiz_question');
+Route::get('/destroy/{topic_id}/{sual_id}', 'TeacherController@destroy');
+Route::post('/fin/{id}', 'TeacherController@fin');
+Route::get('/destroy2/{sual_id}', 'TeacherController@destroy2');
+
 
 
 Route::get('/student', 'StudentController@index')->middleware('Studentmiddleware'); // Sagird middleware ismentor == 0
@@ -49,6 +53,7 @@ Route::get('/privatetest/{id}', 'StudentController@privatetest');
 Route::get('/islenmistest', 'StudentController@islenmistest');
 Route::get('/again', 'StudentController@again');
 Route::get('/publictest', 'StudentController@publictest');
+
 
 Route::get('/publictest', 'StudentController@publictest');
 

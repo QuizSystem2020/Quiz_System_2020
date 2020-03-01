@@ -88,48 +88,34 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="quiz_question">
-                        <p class="question_title">Php nedir?</p>
-                        <p>a)proqramlasdirma dili 1</p>
-                        <p>b)proqramlasdirma dili 2</p>
-                        <p>c)proqramlasdirma dili 3</p>
-                        <p>d)proqramlasdirma dili 4</p>
-                        <button class="btn btn-success">Düzəliş et</button>
-                        <button class="btn btn-danger">Sil</button>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="quiz_question">
-                        <p class="question_title">Laravel nedir?</p>
-                        <p>a)proqramlasdirma dili 1</p>
-                        <p>b)proqramlasdirma dili 2</p>
-                        <p>c)proqramlasdirma dili 3</p>
-                        <p>d)proqramlasdirma dili 4</p>
-                        <button class="btn btn-success">Düzəliş et</button>
-                        <button class="btn btn-danger">Sil</button>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="quiz_question">
-                        <p class="question_title">Java nedir?</p>
-                        <p>a)proqramlasdirma dili 1</p>
-                        <p>b)proqramlasdirma dili 2</p>
-                        <p>c)proqramlasdirma dili 3</p>
-                        <p>d)proqramlasdirma dili 4</p>
-                        <button class="btn btn-success">Düzəliş et</button>
-                        <button class="btn btn-danger">Sil</button>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="quiz_question">
-                        <p class="question_title">C# nedir?</p>
-                        <p>a)proqramlasdirma dili 1</p>
-                        <p>b)proqramlasdirma dili 2</p>
-                        <p>c)proqramlasdirma dili 3</p>
-                        <p>d)proqramlasdirma dili 4</p>
-                        <button class="btn btn-success">Düzəliş et</button>
-                        <button class="btn btn-danger">Sil</button>
-                    </div>
+                    @if(!empty($join))
+                        <?php 
+                            $q = '';
+                            $num = '1';
+                        ?>
+                        @foreach($join as $data)
+                            <div class="quiz_question">
+                                @foreach($data as $datas)
+                                    <div class="col-md-12 mt-3">
+                                        @if($q != $datas['question'])
+                                            <h4 class="question_title">{{$num}}) {{$datas['question']}}</h4>
+                                            <?php
+                                                $q = $datas['question'];
+                                                $num++;
+                                            ?>
+                                        @endif
+                                        <p>{{$datas['cavab']}}</p>
+                                    </div>
+                                @endforeach
+                                <div class="col-md-12">
+                                    <a href="/edit/{{$datas['sual_id']}}"><button class="btn btn-success" name="{{$datas['sual_id']}}">Düzəliş et</button></a>
+                                    <a href="/destroy2/{{$datas['sual_id']}}"><button class="btn btn-danger" name="{{$datas['sual_id']}}">Sil</button></a>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>Quizinizə sual əlavə etməmisiz!</p>
+                    @endif
                 </div>
             </div>
         </div>

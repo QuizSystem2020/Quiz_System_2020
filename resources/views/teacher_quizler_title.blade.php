@@ -70,6 +70,20 @@
                     </div>
                 </div>
             </div>
+            @if($is_public == 0)
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="quiz_question text-center">
+                            <form action="/fin/{{$id}}" method="POST">
+                                @csrf
+                                <label for="">Istifadəçinin FİN kodunu daxil edin :</label> <br>
+                                <input class="input pl-2" type="number" name="fin"> <br><br>
+                                <button type="submit" class="btn btn-success">Bitdi</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-12">
                     <h5 class="h5_settings text-center">Quizdəki Suallar</h5>
@@ -77,35 +91,33 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    
                     @if(!empty($join))
                         <?php 
                             $q = '';
-                            $button = $join[0]['sual_id'];
                             $num = '1';
-                        
                         ?>
-                        @foreach($join as $key => $data)
-                            <div class="col-md-12">
-                                @if($button != $data['sual_id'])
-                                        <?php $button = $data['sual_id']; ?>
-                                        <button class="btn btn-danger" name="{{$data['sual_id']}}">Sil</button>
-                                    @endif
-                                @if($q != $data['question'])
-                                    <h4 class="question_title">{{$num}}) {{$data['question']}}</h4>
-                                    
-                                    <?php
-                                        $q = $data['question'];
-                                        $num++;
-                                    ?>
-                                @endif
-                                <p>{{$data['cavab']}}</p>
+                        @foreach($join as $data)
+                            <div class="quiz_question">
+                                @foreach($data as $datas)
+                                    <div class="col-md-12 mt-3">
+                                        @if($q != $datas['question'])
+                                            <h4 class="question_title">{{$num}}) {{$datas['question']}}</h4>
+                                            <?php
+                                                $q = $datas['question'];
+                                                $num++;
+                                            ?>
+                                        @endif
+                                        <p>{{$datas['cavab']}}</p>
+                                    </div>
+                                @endforeach
+                                <div class="col-md-12">
+                                    <a href="/destroy/{{$datas['topic_id']}}/{{$datas['sual_id']}}"><button class="btn btn-danger" name="{{$datas['sual_id']}}">Sil</button></a>
+                                </div>
                             </div>
                         @endforeach
                     @else
                         <p>Quizinizə sual əlavə etməmisiz!</p>
                     @endif
-                    
                 </div>
             </div>
         </div>

@@ -7,10 +7,10 @@ body{
 }
 a{
     text-decoration: none!important;
-    color: inherit;
+    color: inherit !important;
 }
 a:hover{
-    color: inherit;
+    color: inherit !important;
 }
 .teacher-name h4{
     font-size: 50px;
@@ -64,17 +64,15 @@ a:hover{
    width: 100%;
    flex-wrap: wrap;
    display: flex;
-   padding-left: 7%;
 }
-.quiz_list a{
-    margin: 10px;
-}
+
 .quiz_topic{
     width: 300px;
     height: 160px;
     border-radius: 5px!important;
     background-color: #9a9c9a;
     color: #fff;
+    margin-bottom: 15%;
     -webkit-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
     box-shadow: 7px 9px 12px 1px rgba(0,0,0,0.75);
@@ -91,6 +89,11 @@ a:hover{
     justify-content: center;
     display: flex;
     margin-top: 50px;
+}
+.input{
+    border:1px solid #797a79!important;
+    border-radius: 5px!important;
+    outline: none;
 }
 
 .director{
