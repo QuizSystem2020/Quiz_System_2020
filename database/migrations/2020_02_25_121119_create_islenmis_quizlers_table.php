@@ -17,7 +17,6 @@ class CreateIslenmisQuizlersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('topic_id');
-            $table->integer('is_worked');
             $table->date('deleted_at')->nullable();
             $table->timestamps();
         });

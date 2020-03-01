@@ -59,7 +59,6 @@ $('.complete').on('click' , function(){
       } 
        arr.push(radioValue);
    }
-   console.log(arr)
    $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -72,8 +71,8 @@ $('.complete').on('click' , function(){
       data:{'cavab': arr , 'id':{{$quiz_id}}},
       success : function(response)
       {
-         console.log('bosh' + response.bosh + 'duz' + response.duz + 'sehv' + response.sehv);
          alert('bosh : ' + response.bosh + '\nduz :  ' + response.duz + '\nsehv : ' + response.sehv);
+         location.href = '/student';
       }
    })
 })
@@ -118,9 +117,9 @@ function startTimer(duration, display) {
       method:'POST',
       data:{'cavab': arr , 'id':{{$quiz_id}}},
       success : function(response)
-      {
-         console.log('bosh' + response.bosh + 'duz' + response.duz + 'sehv' + response.sehv);
+      {   
          alert('bosh : ' + response.bosh + '\nduz :  ' + response.duz + '\nsehv : ' + response.sehv);
+         location.href = '/student';
       }
    })
         }
