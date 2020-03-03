@@ -21,6 +21,7 @@ class StudentController extends Controller
         $data= Quiz_Topic::select( 'quiztopics.id' , 'topic' , 'name' , 'surname', 'test_time')
         ->where('is_public' , 1)
         ->join('users' , 'users.id' , '=' , 'quiztopics.director')
+        
         ->paginate(6);
         return view('public' , [
             'data'=> $data

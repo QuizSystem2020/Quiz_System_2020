@@ -16,11 +16,13 @@ class Teachermiddlewar
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->ismontor === 1)
+        if (Auth::check() === true && Auth::user()->ismontor === 1)
         {
             return $next($request);
-        }else{
-                return back();
-            }
+        }
+        else
+        {
+            return back();
+        }
     }
 }

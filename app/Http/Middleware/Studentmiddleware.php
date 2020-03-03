@@ -16,10 +16,12 @@ class Studentmiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->ismontor == 0) {
-            
-        return $next($request);
-        }else{
+        if(Auth::check() === true && Auth::user()->ismontor == 0)
+        {
+            return $next($request);
+        }
+        else
+        {
             return back();
         }
     }
