@@ -87,18 +87,23 @@
                 </div>
             </div>
             <div class="row">
+                <?php
+                   $q= '';
+                ?>
+              @foreach($datas as $data)
                 <div class="col-12">
                     <div class="quiz_question">
-                        <p class="question_title">Php nedir?</p>
-                        <p>a)proqramlasdirma dili 1</p>
-                        <p>b)proqramlasdirma dili 2</p>
-                        <p>c)proqramlasdirma dili 3</p>
-                        <p>d)proqramlasdirma dili 4</p>
+                        @if($q != $data['question'])
+                        <?php $q = $data['question']; ?>
+                        <p class="question_title">{{$data['question']}}</p>
+                        @endif
+                        <p>{{$data['cavab']}}</p>
                         <button class="btn btn-success">Düzəliş et</button>
                         <button class="btn btn-danger">Sil</button>
                     </div>
                 </div>
-                <div class="col-12">
+                @endforeach
+                <!-- <div class="col-12">
                     <div class="quiz_question">
                         <p class="question_title">Laravel nedir?</p>
                         <p>a)proqramlasdirma dili 1</p>
@@ -130,7 +135,7 @@
                         <button class="btn btn-success">Düzəliş et</button>
                         <button class="btn btn-danger">Sil</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

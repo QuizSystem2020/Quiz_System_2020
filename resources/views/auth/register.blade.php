@@ -66,7 +66,7 @@
                              
                              <input id="password-confirm" type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" placeholder="Təkrar şifrə:">
                        
-                                 <label class="" for="">Nə kimi qeydiyatdan keçirsiniz?</label>
+                                 <label class="" for="">Kim olaraq qeydiyatdan keçirsiniz?</label>
                                  <br>
                                 <label for="opt2" class="radio">
                                     <input type="radio" name="ismentor" id="opt2" class="hidden" value="1"/>
