@@ -64,12 +64,11 @@
     }
 }
 </style>
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-      Bootstrap
-    </a>
-    <a class="navbar-brand" href="{{route('logout')}}">logout</a>    
+<!-- Just an image -->
+<nav class="navbar navbar-white bg-dark">
+    <a class="navbar-brand text-white " >Xos gelmisiz</a>
+
+    <a href="" class="btn btn-danger">Logo ut</a>
   </nav>
 @yield('content')
 
