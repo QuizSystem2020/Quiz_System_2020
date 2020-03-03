@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDeletedAtColumnToQuiztopicsTable extends Migration
+class AddDirectorColumnToSuallarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddDeletedAtColumnToQuiztopicsTable extends Migration
      */
     public function up()
     {
-        Schema::table('quiztopics', function (Blueprint $table) {
-            $table->date('deleted_at')->nullable();
+        Schema::table('suallars', function (Blueprint $table) {
+            $table->string('director');
         });
     }
 
@@ -25,7 +25,7 @@ class AddDeletedAtColumnToQuiztopicsTable extends Migration
      */
     public function down()
     {
-        Schema::table('quiztopics', function (Blueprint $table) {
+        Schema::table('suallars', function (Blueprint $table) {
             //
         });
     }
