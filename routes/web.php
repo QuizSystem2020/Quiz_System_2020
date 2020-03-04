@@ -38,6 +38,7 @@ Route::get('/teacher/quizler/{id}/{is_public}', 'TeacherController@title');
 Route::post('/insert_quiz_topic', 'TeacherController@insert_quiz_topic');
 Route::post('/insert_quiz_question/{id}', 'TeacherController@insert_quiz_question');
 Route::get('/destroy/{topic_id}/{sual_id}', 'TeacherController@destroy');
+Route::get('/edit', 'TeacherController@edit');
 Route::post('/fin/{id}', 'TeacherController@fin');
 Route::get('/destroy2/{sual_id}', 'TeacherController@destroy2');
 
