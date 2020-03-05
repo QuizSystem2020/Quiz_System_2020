@@ -119,6 +119,9 @@ a:hover{
     left:100px;
     overflow:hidden;
 }
+.logout{
+    margin-top: -20px !important;
+}
 @media only screen and (max-width: 600px) {
     .timer_div{
         width: 40px;

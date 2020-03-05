@@ -12,7 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/teacher.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet"> -->
+    @yield('styles')
     <title>QuizSystem</title>
 </head>
 
@@ -64,8 +65,33 @@
     }
 }
 </style>
+<body>
+<!-- Just an image -->
+<nav class="navbar navbar-white bg-dark">
+    <a class="navbar-brand text-white " >Xoş gəlmisiniz</a>
 
+    <div class="">
+              <li class="logout">
+               <div>
+                     <a class="text-dark" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                       <button class="btn btn-danger">Çıxış</button>
+                     </a>
+          
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                      @csrf
+                    </form>
+               </div>
+              </li>
+          </div>
+  </nav>
+  @yield('scripts')
+</body>
 @yield('content')
+
+
+
 
 
 </html>

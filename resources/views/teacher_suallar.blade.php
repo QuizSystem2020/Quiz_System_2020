@@ -51,9 +51,9 @@
                         @csrf
                             <div class="modal-body">
                                 <label for="">? </label>
-                                <input type="text" name="title" placeholder="Sual başlığını daxil edin" required> <br><br>
+                                <input type="text" name="title"  placeholder="Sual başlığını daxil edin" required> <br><br>
                                 <label for="">? </label>
-                                <input type="text" name="question" placeholder="Sualı daxil edin" required> <br><br>
+                                <input type="text" name="question" id="summernote" placeholder="Sualı daxil edin" required> <br><br>
                                 <label for="">a)</label>
                                 <input type="text" name="option_a" placeholder="Cavab variantı" required>
                                 <select>
@@ -97,7 +97,7 @@
                                 @foreach($data as $datas)
                                     <div class="col-md-12 mt-3">
                                         @if($q != $datas['question'])
-                                            <h4 class="question_title">{{$num}}) {{$datas['question']}}</h4>
+                                            <h4 class="question_title">{{$num}} {{$datas['question']}}</h4>
                                             <?php
                                                 $q = $datas['question'];
                                                 $num++;
@@ -107,7 +107,7 @@
                                     </div>
                                 @endforeach
                                 <div class="col-md-12">
-                                <a onclick="edit('{{$datas[sual_id]}}','{{$datas[title]}}', '{{$datas[question]}}','{{$datas[cavab]}}')"><button class="btn btn-success" name="{{$datas['sual_id']}}">Düzəliş et</button></a>
+                                <a onclick="edit(`{{$datas['sual_id']}}`,`{{$datas['title']}}`, `{{$datas['question']}}`,`$datas['cavab']`)"><button class="btn btn-success" name="{{$datas['sual_id']}}">Düzəliş et</button></a>
                                     <a href="/destroy2/{{$datas['sual_id']}}"><button class="btn btn-danger" name="{{$datas['sual_id']}}">Sil</button></a>
                                 </div>
                             </div>
@@ -156,88 +156,23 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-<script>
-        edit = (sual_id,title,question,cavab) => {
-            console.log(id);
-            $.confirm({
-                title: 'Düzəliş et!',
-                content: '' +
-                 
-                    '<label>Sual Başlığı:</label>' +
-                    '<input type="text" placeholder="Sual başlığı" class="title form-control" value="'+title+'" required />' +
-                    '<label>Sual:</label>' +
-                    '<input type="text" placeholder="Sual" class="question form-control" value="'+question+'" required />' +
-                    '<label>Cavab 1:</label>' +
-                    '<input type="text" placeholder="Poçt ünvanınız" class="cavab form-control" value="'+cavab+'" required />' +
-                    '<label>Əlaqə nömrəniz:</label>' +
-                    '<input type="text" placeholder="Əlaqə nömrəniz" class="nomre form-control" value="'+nomre+'" required />' +
-                    '<label>Cinsiniz</label>' +
-                    '<input type="text" placeholder="Cinsiniz" class="cins form-control" value="'+cins+'" required />' +
-                    '<label>Yaşınız</label>' +
-                    '<input type="text" placeholder="Yaşınız" class="yas form-control" value="'+yas+'" required />' +
-                    '<label>Boyunuz</label>' +
-                    '<input type="text" placeholder="Boyunuz" class="boy form-control" value="'+boy+'" required />' +
-                    '<label>Çəkiniz</label>' +
-                    '<input type="text" placeholder="Çəkiniz" class="ceki form-control" value="'+ceki+'" required />' +
-                    '<label>Bədən ölçüləriniz</label>' +
-                    '<input type="text" placeholder="Bədən ölçüləriniz" class="olcu form-control" value="'+olcu+'" required />' +
-                    '<label>Göz rəngi</label>' +
-                    '<input type="text" placeholder="Göz rəngi" class="goz form-control" value="'+goz+'" required />' +
-                    '<label>Saç rəngi</label>' +
-                    '<input type="text" placeholder="Saç rəngi" class="sac form-control" value="'+sac+'" required />' +
-                    '<label>Kateqoriya</label>' +
-                    '<input type="text" placeholder="kateqoriya" class="kateqoriya form-control" value="'+kateqoriya+'" required />' +
-                    '<label>Təcrübə</label>' +
-                    '<input type="text" placeholder="Təcrübə" class="tecrube form-control" value="'+tecrube+'" required />' +
-                    '<label>Təcrübə keçilən yerlər</label>' +
-                    '<input type="text" placeholder="Təcrübə keçilən yerlər" class="isler form-control" value="'+isler+'" required />' +
-                    '<label>Şəkillər</label>' +
-                    '<input type="text" placeholder="Şəkillər" class="sekiller form-control" value="'+sekiller+'" required />' ,
-                    // '</div>' ,
-                    // '</form>',
-                buttons: {
-                    formSubmit: {
-                        text: 'Düzəliş et',
-                        btnClass: 'btn-blue',
-                        action: function () {
-                            name = this.$content.find('.name').val();
-                            surname = this.$content.find('.name').val();
-                            email = this.$content.find('.email').val();
-                            nomre = this.$content.find('.nomre').val();
-                            cins = this.$content.find('.cins').val();
-                            yas = this.$content.find('.yas').val();
-                            boy = this.$content.find('.boy').val();
-                            ceki = this.$content.find('.ceki').val();
-                            olcu = this.$content.find('.olcu').val();
-                            goz = this.$content.find('.goz').val();
-                            sac = this.$content.find('.sac').val();
-                            kateqoriya = this.$content.find('.kateqoriya').val();
-                            tecrube = this.$content.find('.tecrube').val();
-                            isler = this.$content.find('.isler').val();
-                            sekiller = this.$content.find('.sekiller').val();
-                            let _token = '{{csrf_token()}}';
-                            if(!cins || !yas || !boy || !ceki || !olcu || !goz || !sac || !tecrube || !isler){
-                                $.alert('Bosh saxlamayin');
-                                return false;
-                            }
-                            $.post('/profil/edit', {id: id,name: name,surname: surname,email: email,nomre: nomre, cins: cins,yas:yas,boy:boy,ceki:ceki,olcu:olcu,goz:goz,sac:sac,kateqoriya:kateqoriya,tecrube:tecrube,isler:isler,sekiller:sekiller, _token: _token}, (response) => {
-                                if(response.status == 'success') location.reload();
-                                else 
-                                {   
-                                   // console.log(nomre);
-                                    $.alert('Xeta var!');
-                                }
-                            })
-                        }
-                    },
-                    "Bağla": function () {
-                        //close
-                    },
-                }
-            });
-        }
-    </script>
+
     </body>
 
 
+@endsection
+
+
+@section('styles')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+@endsection
+
+
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+</script>
 @endsection

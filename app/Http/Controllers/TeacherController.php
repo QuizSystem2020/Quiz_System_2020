@@ -25,8 +25,11 @@ class TeacherController extends Controller
         $cavablars= new Cavablar;
         $join = $cavablars::leftJoin('suallars', 'suallars.sual_id', '=', 'cavablars.sual_id')->where('suallars.director', Auth::user()->id)->get()->groupBy('sual_id')->toArray();
         //dd($join);
+        // $cavablar= $cavablars::select('cavablars.cavab')->leftJoin('suallars','suallars.sual_id','=','cavablars.sual_id')->get()->toArray();
+       // dd($cavablar);
         return view('teacher_suallar',[
-            'join' => $join
+            'join' => $join,
+            
         ]);
     }
 
@@ -51,6 +54,7 @@ class TeacherController extends Controller
         );
     
         Cavablar::insert($data);
+      
 
         return back();
     }
@@ -118,6 +122,8 @@ class TeacherController extends Controller
         return back()->withInput();
     }
 
+
+
     public function edit(SuallarRequest $request){
         $suallars = new Suallar;
         $cavablars= new Cavablar;
@@ -125,7 +131,7 @@ class TeacherController extends Controller
         $suallars->question = $request->question;
         $suallars->director = Auth::user()->id;
         $suallars->title = $request->title;
-        $suallars->save();
+        $suallars->where($suallars->sual_id,$request->sual_id)->update();
 
         $id= Suallar::orderBy('sual_id','desc')->get()->first();
         $id=collect($id);
@@ -138,12 +144,15 @@ class TeacherController extends Controller
             array('cavab'=>$request->option_e, 'is_correct'=>$request->input('is_correct5'), 'sual_id'=>$id['sual_id'])
         );
     
-        Cavablar::insert($data);
-
+        Cavablar::where($suallars->sual_id,$request->sual_id)->update($data);
+        
         return response()->json([
             'status'=>'success'
           ]); 
     }
+
+
+
 
 
     public function destroy2($sual_id){
